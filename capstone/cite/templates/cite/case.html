@@ -71,6 +71,26 @@
             </div>
           </template>
 
+
+          <!-- I added this -->
+
+          {% if context_tags %}
+          <template v-slot:context>
+            <div class="sidebar-section" id="context">
+              <h2 class="sidebar-title">Context</h2>
+              <div class="sidebar-section-contents">
+                <ul class="list-inline">
+                  {% if slave_case_tag %}
+                    <li class="list-inline-item"><a class="btn" href="{{ db_case.get_pdf_url|elide:db_case|striptags }}">Key Slave Case</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </template>
+          {% endif %}
+
+          <!-- My code ends here -->
+
           {% if similar_cases %}
             <template v-slot:similar-cases>
               <div class="sidebar-section" id="similar-cases">

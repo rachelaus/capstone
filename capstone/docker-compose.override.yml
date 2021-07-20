@@ -1,9 +1,11 @@
 version: '2.2'
 services:
     db:
-        build:
-          context: ../services/docker
-          dockerfile: extended-postgres.dockerfile
+        image: arm64v8/postgres:11.11
+        #platform: linux/arm64
+        #build:
+        #  context: ../services/docker
+        #  dockerfile: postgres:11.11
     web:
         build:
             context: .
